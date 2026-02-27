@@ -22,7 +22,7 @@ category_mapping = {
 st.title('Big Five Personality Profession Predictor')
 
 st.write("Enter your Big Five personality scores to predict your potential profession.")
-nombre = st.user_input('Ingresa tu nombre')
+nombre = st.text_input('Ingresa tu nombre')
 # Input fields for personality traits using sliders
 # Using min, max, and mean from df.describe() as a guide
 op_value = st.slider('Openness (op): Tendency to be imaginative, curious, and open to new experiences',
