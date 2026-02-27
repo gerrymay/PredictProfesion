@@ -22,7 +22,7 @@ category_mapping = {
 st.title('Big Five Personality Profession Predictor')
 
 st.write("Enter your Big Five personality scores to predict your potential profession.")
-
+nombre = st.user_input('Ingresa tu nombre')
 # Input fields for personality traits using sliders
 # Using min, max, and mean from df.describe() as a guide
 op_value = st.slider('Openness (op): Tendency to be imaginative, curious, and open to new experiences',
@@ -44,7 +44,7 @@ st.write(f"Agreeableness: {ag_value}")
 st.write(f"Neuroticism: {ne_value}")
 
 # Create a button to trigger prediction
-if st.button('Predict Profession'):
+if st.button('Predice tu Profesion'):
     # Prepare the input data for the model
     input_data = pd.DataFrame([{
         'op': op_value,
@@ -60,4 +60,4 @@ if st.button('Predict Profession'):
     # Map the numerical prediction to the category name
     predicted_profession = category_mapping.get(prediction_numeric, 'Unknown Category')
 
-    st.success(f"Based on your scores, your predicted profession is: **{predicted_profession}**")
+    st.success(f"Hola {nombre} Based on your scores, your predicted profession is: **{predicted_profession}**")
